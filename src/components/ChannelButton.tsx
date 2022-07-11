@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 type Props = {
     channelNumber: string;
+    setError: (error: string) => void;
+    setIsError: (flag: boolean) => void;
 }
 
 const ChannelButton: React.FC<Props> = props => {
@@ -15,6 +17,10 @@ const ChannelButton: React.FC<Props> = props => {
                 throw new Error('Error occured!');
             }
         } catch (error) {
+            props.setIsError(true);
+            if (error instanceof Error) {
+                props.setError(error.message);
+            }
             console.log(error);
         } finally {
             setIsLoading(false);

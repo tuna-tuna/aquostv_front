@@ -1,6 +1,11 @@
 import { useState } from 'react';
 
-const PowerButton: React.FC = () => {
+type Props = {
+    setError: (error: string) => void;
+    setIsError: (flag: boolean) => void;
+}
+
+const PowerButton: React.FC<Props> = props => {
     const [isLoading, setIsLoading] = useState(false);
     const sendChannelRequest = async () => {
         setIsLoading(true);
@@ -11,6 +16,10 @@ const PowerButton: React.FC = () => {
                 throw new Error('Error occured!');
             }
         } catch (error) {
+            props.setIsError(true);
+            if (error instanceof Error) {
+                props.setError(error.message);
+            }
             console.log(error);
         } finally {
             setIsLoading(false);
