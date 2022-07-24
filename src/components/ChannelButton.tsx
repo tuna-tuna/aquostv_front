@@ -30,7 +30,7 @@ const ChannelButton: React.FC<Props> = props => {
         <button onClick={() => sendChannelRequest(props.channelNumber)} className={`rounded-md ${isLoading ? 'bg-red-400' : 'bg-blue-300'} text-white font-bold py-2 px-4 hover:opacity-75`}>
             {props.channelNumber}
         </button>
-    )
+    );
 }
 
 export default ChannelButton;

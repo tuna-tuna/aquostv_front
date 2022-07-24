@@ -8,7 +8,6 @@ import PowerButton from './components/PowerButton';
 import ErrorModal from './components/ErrorModal';
 
 function App() {
-    //const [showModal, setShowModal] = useState(false);
     const [errorMessage, setError] = useState<string>('');
     const [isError, setIsError] = useState<boolean>(false);
     const channelList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];

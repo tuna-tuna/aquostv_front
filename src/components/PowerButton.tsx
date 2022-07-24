@@ -29,7 +29,7 @@ const PowerButton: React.FC<Props> = props => {
         <button onClick={() => sendChannelRequest()} className={`rounded-md ${isLoading ? 'bg-red-400' : 'bg-green-400'} text-white font-bold py-2 px-4 hover:opacity-75`}>
             <img src="power.png" alt="" />
         </button>
-    )
+    );
 }
 
 export default PowerButton;

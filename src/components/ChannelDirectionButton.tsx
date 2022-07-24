@@ -30,7 +30,7 @@ const ChannelDirectionButton: React.FC<Props> = props => {
         <button onClick={() => sendChannelRequest(props.direction)} className={`rounded-md ${isLoading ? 'bg-red-400' : 'bg-blue-300'} text-white font-bold py-2 px-4 hover:opacity-75`}>
             {props.direction === 'up' ? '△' : '▽'}
         </button>
-    )
+    );
 }
 
 export default ChannelDirectionButton;
